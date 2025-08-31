@@ -96,7 +96,7 @@ Nowoczesna aplikacja katalogu produktów zbudowana w oparciu o backend Symfony o
     ```bash
     git clone <repository-url>
     cd test-wb2b-2
-    cp .env.example .env
+    cp .env.example backend/.env
     ```
     
 2. **Uruchom aplikację**
