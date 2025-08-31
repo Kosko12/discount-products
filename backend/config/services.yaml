@@ -1,0 +1,19 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    App\:
+        resource: '../src/'
+        exclude:
+            - '../src/DependencyInjection/'
+            - '../src/Entity/'
+            - '../src/Kernel.php'
+
+    # Discount strategies
+    App\Service\Discount\PercentDiscountStrategy:
+        tags: ['app.discount_strategy']
+
+    App\Service\FinalPriceCalculator:
+        arguments:
+            $discountStrategies: !tagged_iterator app.discount_strategy
